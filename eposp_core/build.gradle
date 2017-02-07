@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
-version = "0.0.3"
+version = "0.0.1"
 
 android {
     compileSdkVersion 23
@@ -37,7 +37,7 @@ install {
         pom {
             project {
                 packaging 'aar'
-                name 'Less Code For Android'                                   // #CONFIG# // project title
+                name 'eposp core For Android'                                   // #CONFIG# // project title
                 url siteUrl
                 // Set your license
                 licenses {
@@ -48,10 +48,10 @@ install {
                 }
                 developers {
                     developer {
-                        id 'xqf'                                           // #CONFIG# // your user id (you can write your nickname)
+                        id 'goodfeng'                                           // #CONFIG# // your user id (you can write your nickname)
                         name 'xuqingfeng'                                       // #CONFIG# // your user name
-                        email '609563977@qq.com'                               // #CONFIG# // your email
-                    }
+                        email 'xuqingfeng77@foxmail.com'                               // #CONFIG# // your email
+                }
                 }
                 scm {
                     connection gitUrl
@@ -90,11 +90,14 @@ bintray {
     key = properties.getProperty("bintray.apikey")
     configurations = ['archives']
     pkg {
-        repo = "maven"
+        repo = "goodfeng"
         name = "eposp_core"                                                 // #CONFIG# project name in jcenter
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
-        publish = false
+        labels=['android']
+        publish = true
+        publicDownloadNumbers=true
+
     }
 }
